@@ -114,6 +114,137 @@
   </div>
 </section>
 
+<!-- Teaser video-->
+<section class="hero teaser">
+    <div class="container is-max-desktop has-text-centered">
+      <div class="hero-body">
+          <img src="static/images/teaser.png" alt="MY ALT TEXT"/>
+      <p>DreamRenderer is a plug-and-play controller that grants users fine-grained control over the content of each region and instance during depth- or canny-conditioned generation without any training.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+  <!-- Paper abstract -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Image-conditioned generation methods, such as depth- and canny-conditioned approaches, have demonstrated remarkable abilities for precise image synthesis. However, existing models still struggle to accurately control the content of multiple instances (or regions). Even state-of-the-art models like FLUX and 3DIS face challenges, such as attribute leakage between instances, which limits user control. To address these issues, we introduce DreamRenderer, a training-free approach built upon the FLUX model. DreamRenderer enables users to control the content of each instance via bounding boxes or masks, while ensuring overall visual harmony. We propose two key innovations: 1) Bridge Image Tokens for Hard Text Attribute Binding, which uses replicated image tokens as bridge tokens to ensure that T5 text embeddings, pre-trained solely on text data, bind the correct visual attributes for each instance during Joint Attention; 2) Hard Image Attribute Binding applied only to vital layers. Through our analysis of FLUX, we identify the critical layers responsible for instance attribute rendering and apply Hard Image Attribute Binding only in these layers, using soft binding in the others. This approach ensures precise control while preserving image quality. Evaluations on the COCO-POS and COCO-MIG benchmarks demonstrate that DreamRenderer improves the Image Success Ratio by 17.7% over FLUX and enhances the performance of layout-to-image models like GLIGEN and 3DIS by up to 26.8%.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+            </div>
+          </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+          <img src="static/images/framework.png" alt="MY ALT TEXT"/>
+      <h2 class="content has-text-justified">
+          <p>
+              We propose two key innovations: 1) Bridge Image Tokens for Hard Text Attribute Binding, which uses replicated image tokens as bridge tokens to ensure that T5 text embeddings, pre-trained solely on text data, bind the correct visual attributes for each instance during Joint Attention; 2) Hard Image Attribute Binding applied only to vital layers. Through our analysis of FLUX, we identify the critical layers responsible for instance attribute rendering and apply Hard Image Attribute Binding only in these layers, using soft binding in the others.
+          </p>
+        </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Adding region/instance control on FLUX</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+         <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/adding_control.png" alt="MY ALT TEXT"/>
+        </div>
+    </div>
+  </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+
+    <!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Rerendering on Layout-to-Image Models</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+         <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/rerendering.png" alt="MY ALT TEXT"/>
+        </div>
+    </div>
+  </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+  
+
+  <hr class="dashed-line">
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">COCO-Position Results</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <img src="static/images/cocopos.png" alt="MY ALT TEXT"/>
+	</h2>
+	</div>
+     </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">COCO-MIG Results</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+          <img src="static/images/cocomig.png" alt="MY ALT TEXT"/>
+      </h2>
+      </div>
+       </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
 
 
