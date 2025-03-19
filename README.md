@@ -2,13 +2,13 @@
 
 [[Project Page]](https://limuloo.github.io/DreamRenderer/) [[Paper]](https://arxiv.org/abs/2503.12885) [[Hugging Face]](https://huggingface.co/papers/2503.12885) [[Supplementary Material]](https://drive.google.com/file/d/1MNaKZmIyBXT7Ia_6DJ56vJ2TeB5o8m6c/view?usp=sharing)
 
-Codes will be released this week, stay tuned!
-
 ## 🔥 News
 
 - 2025-03-17: Our paper [DreamRenderer](https://arxiv.org/abs/2503.12885) is now available on arXiv and [Supplementary Material](https://drive.google.com/file/d/1MNaKZmIyBXT7Ia_6DJ56vJ2TeB5o8m6c/view?usp=sharing) is released.
 
 ![Multi-Instance Attribute Control](static/images/teaser.png)
+
+**Codes will be released this week, stay tuned! 🚀**
 
 ## 📝 Introduction
 
