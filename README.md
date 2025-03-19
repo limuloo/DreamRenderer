@@ -1,4 +1,4 @@
-# DreamRenderer: Multi-Instance Attribute Control in Large-Scale Text-to-Image Models 🎨
+# DreamRenderer: Taming Multi-Instance Attribute Control in Large-Scale Text-to-Image Models 🎨
 
 [[Project Page]](https://limuloo.github.io/DreamRenderer/) [[Paper]](https://arxiv.org/abs/2503.12885) [[Hugging Face]](https://huggingface.co/papers/2503.12885) [[Supplementary Material]](https://drive.google.com/file/d/1MNaKZmIyBXT7Ia_6DJ56vJ2TeB5o8m6c/view?usp=sharing)
 
@@ -20,6 +20,7 @@ DreamRenderer is a training-free method built upon the FLUX model that enables u
 - [ ] More Demos
 - [ ] Inference Code 
 - [ ] ComfyUI support
+- [ ] Huggingface Space support
 
 ## 🛠️ Installation
 
@@ -63,4 +64,4 @@ If you find this repository useful, please cite using the following BibTeX entry
 
 ## 📬 Contact
 
-If you have any questions or suggestions, please feel free to contact us:
+If you have any questions or suggestions, please feel free to contact us 😆!
