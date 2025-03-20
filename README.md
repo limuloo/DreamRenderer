@@ -60,6 +60,14 @@ python scripts/inference_demo0.py --use_sam_enhance
 </p>
 
 
+```
+python scripts/inference_demo1.py --use_sam_enhance
+```
+<p align="center">
+  <img src="figures/demo1.png" alt="example" width="952" height="303"/>
+</p>
+
+
 ## 📊 Comparison with Other Models
 
 <p align="center">
