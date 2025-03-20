@@ -64,7 +64,7 @@ python scripts/inference_demo0.py --use_sam_enhance
 python scripts/inference_demo1.py --use_sam_enhance
 ```
 <p align="center">
-  <img src="figures/demo1.png" alt="example" width="952" height="303"/>
+  <img src="figures/demo1.png" alt="example" width="952" height="236"/>
 </p>
 
 
