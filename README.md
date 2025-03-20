@@ -8,8 +8,6 @@
 
 ![Multi-Instance Attribute Control](static/images/teaser.png)
 
-**Codes will be released this week, stay tuned! 🚀**
-
 ## 📝 Introduction
 
 DreamRenderer is a training-free method built upon the FLUX model that enables users to precisely control the content of each instance through bounding boxes or masks while ensuring overall visual harmony. 
@@ -17,8 +15,8 @@ DreamRenderer is a training-free method built upon the FLUX model that enables u
 ## ✅ To-Do List
 
 - [x] Arxiv Paper & Supplementary Material
-- [ ] More Demos
-- [ ] Inference Code 
+- [x] Inference Code 
+- [ ] More Demos. Coming soon. stay tuned! 🚀
 - [ ] ComfyUI support
 - [ ] Huggingface Space support
 
@@ -26,7 +24,16 @@ DreamRenderer is a training-free method built upon the FLUX model that enables u
 
 ### 🚀 Checkpoints
 
-Download the checkpoint of the SAM2, [sam2_hiera_large.pt](https://drive.google.com/file/d/1QjdY64w7pKm8smh0bV7K9-joeZiow8e0/view?usp=sharing).
+Download the checkpoint of the SAM2, [sam2_hiera_large.pt](https://drive.google.com/file/d/1QjdY64w7pKm8smh0bV7K9-joeZiow8e0/view?usp=sharing), and put it as follow:
+
+```
+├── pretrained_weights
+│   ├── sam2_hiera_large.pt
+├── DreamRenderer
+│   ├── ...
+├── scripts
+│   ├── ...
+```
 
 
 ### 💻 Environment Setup
@@ -38,7 +45,19 @@ cd segment-anything-2
 pip install -e . --no-deps
 cd ..
 pip install -r requirements.txt
+pip install -e .
 ```
+
+## 🎨 Inference
+
+You can quickly use DreamRenderer for precise rendering using follow command:
+```
+python scripts/inference_demo0.py --use_sam_enhance
+```
+<p align="center">
+  <img src="figures/demo0.png" alt="example" width="581" height="303"/>
+</p>
+
 
 ## 📊 Comparison with Other Models
 
