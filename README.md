@@ -49,7 +49,7 @@ pip install -e . --no-deps
 cd ..
 ```
 
-## 🎨 Inference
+## 🧩 Region/Instance Controllable Rendering
 
 You can quickly use DreamRenderer for precise rendering using follow command:
 ```
@@ -73,6 +73,45 @@ python scripts/inference_demo2.py  --num_hard_control_steps=15
 <p align="center">
   <img src="figures/demo2.png" alt="example" width="701" height="299"/>
 </p>
+
+## 🖼️ End-to-End Layout-to-Image Generation
+
+DreamRenderer supports re-rendering outputs from state-of-the-art Layout-to-Image models, enhancing image quality and allowing for fine-grained control over each instance in the layout.
+
+Here's how it works:
+1. A Layout-to-Image method first generates a coarse image based on the input layout.
+2. We extract a depth map from this image.
+3. DreamRenderer then re-renders the scene, guided by the original layout, to produce a higher-quality and more faithful result.
+
+### 📦 1. Install Depth Map Extraction (Depth-Anything v2)
+
+We use **Depth-Anything v2** for extracting depth maps. To enable this feature, follow these steps:
+
+#### Step 1: Install the Depth-Anything package
+
+```bash
+cd Depth-Anything-V2
+pip install -e .
+cd ..
+```
+#### Step 2: Download the model weights
+Download the depth anything v2([depth_anything_v2_vitl.pth](https://huggingface.co/depth-anything/Depth-Anything-V2-Large/tree/main)) model and put it in 'pretrained_weights'
+```
+├── pretrained_weights
+│   ├── depth_anything_v2_vitl.pth
+├── DreamRenderer
+│   ├── ...
+├── scripts
+│   ├── ...
+```
+
+### 🚀 2. Run End-to-End Generation
+
+Once everything is set up, you can run the following commands to achieve end-to-end layout-to-image generation:
+
+```bash
+```
+
 
 ## 📊 Comparison with Other Models
 
