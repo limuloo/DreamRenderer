@@ -67,6 +67,12 @@ python scripts/inference_demo1.py --use_sam_enhance
   <img src="figures/demo1.png" alt="example" width="952" height="236"/>
 </p>
 
+```
+python scripts/inference_demo2.py  --num_hard_control_steps=15
+```
+<p align="center">
+  <img src="figures/demo2.png" alt="example" width="701" height="299"/>
+</p>
 
 ## 📊 Comparison with Other Models
 
