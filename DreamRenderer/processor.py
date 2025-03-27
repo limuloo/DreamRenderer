@@ -262,7 +262,7 @@ class FluxRDIMGAttnProcessor2_0_NPU:
         else:
             hidden_states = F.scaled_dot_product_attention(query, key, value, dropout_p=0.0, is_causal=False, attn_mask=torch.logical_not(atten_mask))
         
-        if FluxRDIMGAttnProcessor2_0_NPU.counter % (num_inference_steps * (19 + 38)) == num_inference_steps * (19 + 38) - 1:
+        if FluxRDIMGAttnProcessor2_0_NPU.counter % (num_inference_steps * (19 + 38)) == 0:
             FluxRDIMGAttnProcessor2_0_NPU.soft_bind_mask = None
             FluxRDIMGAttnProcessor2_0_NPU.hard_bind_mask = None 
             FluxRDIMGAttnProcessor2_0_NPU.hard_bind_mask2 = None 
