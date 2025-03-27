@@ -42,11 +42,11 @@ Download the checkpoint of the SAM2, [sam2_hiera_large.pt](https://drive.google.
 ```bash
 conda create -n dreamrenderer python=3.10 -y
 conda activate dreamrenderer
+pip install -r requirements.txt
+pip install -e .
 cd segment-anything-2
 pip install -e . --no-deps
 cd ..
-pip install -r requirements.txt
-pip install -e .
 ```
 
 ## 🎨 Inference
