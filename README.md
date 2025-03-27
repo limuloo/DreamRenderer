@@ -112,7 +112,7 @@ Once everything is set up, you can run the following commands to achieve end-to-
 End-to-end layout-to-image generation with [MIGC](https://github.com/limuloo/MIGC):
 
 ```bash
-CUDA_VISIBLE_DEVICES=1 python scripts/inference_demo3.py  --res=768 --use_sam_enhance --num_hard_control_steps=15
+python scripts/inference_demo3.py  --res=768 --use_sam_enhance --num_hard_control_steps=15
 ```
 <p align="center">
   <img src="figures/demo3.png" alt="example" width="701" height="279"/>
