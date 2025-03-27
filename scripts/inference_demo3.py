@@ -48,7 +48,7 @@ args = parser.parse_args()
 
 def construct_depth_anything_v2_model():
     model = DepthAnythingV2(**{'encoder': 'vitl', 'features': 256, 'out_channels': [256, 512, 1024, 1024]})
-    model.load_state_dict(torch.load(f'/mnt/sda/zdw/ckpt/depth_anything_v2_vitl.pth', map_location='cpu'))
+    model.load_state_dict(torch.load('pretrained_weights/depth_anything_v2_vitl.pth', map_location='cpu'))
     DEVICE = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
     model = model.to(DEVICE).eval()
     return model
