@@ -1093,6 +1093,7 @@ class FluxControlPipeline(
                 self._joint_attention_kwargs['hard_image_attribute_binding_list'] = hard_image_attribute_binding_list
                 self._joint_attention_kwargs['hard_control_steps'] = hard_control_steps
                 self._joint_attention_kwargs['now_steps'] = now_steps
+                self._joint_attention_kwargs['num_inference_steps'] = num_inference_steps
                 # instance_box_list
                 # instance_text_index_lst
                 #  latent_image_ids = self._prepare_latent_image_ids(batch_size, height // 2, width // 2, device, dtype)

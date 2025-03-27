@@ -20,6 +20,7 @@ class FluxRDIMGAttnProcessor2_0_NPU:
     counter = 0
     hard_bind_mask = None
     soft_bind_mask = None
+    hard_bind_mask2 = None
 
     def __init__(self):
         if not hasattr(F, "scaled_dot_product_attention"):
@@ -47,7 +48,8 @@ class FluxRDIMGAttnProcessor2_0_NPU:
         hard_image_attribute_binding_list = [],
         now_steps=None,
         hard_control_steps=20,
-        num_global_text_token=200
+        num_global_text_token=200,
+        num_inference_steps=20
     ) -> torch.FloatTensor:
         batch_size, _, _ = hidden_states.shape if encoder_hidden_states is None else encoder_hidden_states.shape
 
@@ -115,11 +117,6 @@ class FluxRDIMGAttnProcessor2_0_NPU:
 
         if instance_num == 0:
             instance_num = -1
-        
-        if FluxRDIMGAttnProcessor2_0_NPU.counter % (20 * (19 + 38)) == 0:
-            FluxRDIMGAttnProcessor2_0_NPU.soft_bind_mask = None
-            FluxRDIMGAttnProcessor2_0_NPU.hard_bind_mask = None 
-            FluxRDIMGAttnProcessor2_0_NPU.hard_bind_mask2 = None 
         
         if FluxRDIMGAttnProcessor2_0_NPU.soft_bind_mask is None:
             atten_mask = torch.zeros(seq_len+HW, seq_len+HW, device=query.device)
@@ -264,6 +261,12 @@ class FluxRDIMGAttnProcessor2_0_NPU:
             )[0]
         else:
             hidden_states = F.scaled_dot_product_attention(query, key, value, dropout_p=0.0, is_causal=False, attn_mask=torch.logical_not(atten_mask))
+        
+        if FluxRDIMGAttnProcessor2_0_NPU.counter % (num_inference_steps * (19 + 38)) == num_inference_steps * (19 + 38) - 1:
+            FluxRDIMGAttnProcessor2_0_NPU.soft_bind_mask = None
+            FluxRDIMGAttnProcessor2_0_NPU.hard_bind_mask = None 
+            FluxRDIMGAttnProcessor2_0_NPU.hard_bind_mask2 = None 
+        
         hidden_states = hidden_states.transpose(1, 2).reshape(batch_size, -1, attn.heads * head_dim)
         hidden_states = hidden_states.to(query.dtype)
 
