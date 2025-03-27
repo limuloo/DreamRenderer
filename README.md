@@ -109,7 +109,7 @@ Download the depth anything v2([depth_anything_v2_vitl.pth](https://huggingface.
 
 Once everything is set up, you can run the following commands to achieve end-to-end layout-to-image generation.
 
-End-to-end layout-to-image generation with [MIGC](https://github.com/limuloo/MIGC):
+End-to-end layout-to-image generation with [MIGC](https://github.com/limuloo/MIGC) (download [MIGC_SD14.ckpt](https://drive.google.com/file/d/1v5ik-94qlfKuCx-Cv1EfEkxNBygtsz0T/view) and put it in 'pretrained_weights'):
 
 ```bash
 python scripts/inference_demo3.py  --res=768 --use_sam_enhance --num_hard_control_steps=15
