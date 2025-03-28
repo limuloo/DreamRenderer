@@ -119,6 +119,15 @@ python scripts/inference_demo3.py  --res=768 --use_sam_enhance --num_hard_contro
 </p>
 
 
+End-to-end layout-to-image generation with [InstanceDiffusion](https://github.com/frank-xwang/InstanceDiffusion) (download [instancediffusion_sd15.pth](https://huggingface.co/xudongw/InstanceDiffusion/tree/main) and put it in 'pretrained_weights'):
+
+```bash
+python scripts/inference_demo4.py  --use_sam_enhance --num_hard_control_steps=10 --res=768
+```
+<p align="center">
+  <img src="figures/demo4.png" alt="example" width="701" height="279"/>
+</p>
+
 
 
 We will soon integrate with more of Sota's layout-to-image methods. Stay tuned.
