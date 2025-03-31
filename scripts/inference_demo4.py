@@ -239,16 +239,17 @@ if __name__ == "__main__":
                      'a lego dog standing on the rock', 
                      'a cat made by ice standing on the rock', 
                      'a close up of a small waterfall in the woods']]
-    input_bboxes = [[[0.0, 0.099609375, 0.349609375, 0.44921875], 
-               [0.349609375, 0.19921875, 0.298828125, 0.298828125], 
-               [0.6484375, 0.19921875, 0.349609375, 0.498046875], 
-               [0.0, 0.69921875, 1.0, 0.298828125]]]
-    
-
+    input_bboxes = [[[0.0, 0.099609375, 0.349609375, 0.548828125], 
+                     [0.349609375, 0.19921875, 0.6484375, 0.498046875], 
+                     [0.6484375, 0.19921875, 0.998046875, 0.697265625], 
+                     [0.0, 0.69921875, 1.0, 0.998046875]]]
 
     ########################################################## Begin Instance-Diffusion Inference ##########################################################
-
-    bboxes = [[[int(x*512) for x in box] for box in input_bboxes[0]]]
+    bboxes = [[]]
+    for o in input_bboxes[0]:
+        x0, y0, x1, y1 = o[0], o[1], o[2], o[3]
+        bboxes[0].append([x0, y0, (x1 - x0), (y1 - y0)])
+    bboxes = [[[int(x*512) for x in box] for box in bboxes[0]]]
     data = {}
     data["caption"] = prompt_final[0][0]
     data["annos"] = []
@@ -384,12 +385,7 @@ if __name__ == "__main__":
 
 
     ########################################################## Begin Re-Render ##########################################################
-    bboxes = [[]]
-    for o in input_bboxes[0]:
-        x0, y0, x1, y1 = o[0], o[1], o[2], o[3]
-        x1 = x0 + x1
-        y1 = y0 + y1
-        bboxes[0].append([x0, y0, x1, y1])
+    bboxes = input_bboxes
     def construct_depth_anything_v2_model():
         model = DepthAnythingV2(**{'encoder': 'vitl', 'features': 256, 'out_channels': [256, 512, 1024, 1024]})
         model.load_state_dict(torch.load('pretrained_weights/depth_anything_v2_vitl.pth', map_location='cpu'))
