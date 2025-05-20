@@ -78,7 +78,7 @@ python scripts/inference_demo2.py --num_hard_control_steps=15
   <img src="figures/demo2.png" alt="Demo 2 Output" width="701" height="299"/>
 </p>
 
-### 🔌 Support for ControlNet (rough implementation version)
+### 🔌 Support for **ControlNet** (rough implementation version)
 
 In the original paper, we used FLUX-depth and FLUX-canny for image-conditioned generation. Now, we also provide a script that supports image-conditioned generation via [ControlNet](https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Union/tree/main):
 ```bash
@@ -87,6 +87,17 @@ python scripts/inferenceCN_demo0.py --res=768
 <p align="center">
   <img src="figures/CN_demo0.png" alt="ControlNet Demo Output" width="701" height="299"/>
 </p>
+
+### 🔌 Support for **SD3** (rough implementation version)
+
+To further demonstrate the generalizability of our method, we integrated DreamRenderer with another DiT-based architecture, [SD3](https://huggingface.co/stabilityai/stable-diffusion-3-medium). We use [ControlNet](https://huggingface.co/InstantX/SD3-Controlnet-Depth) to guide generation based on depth:
+```
+python scripts/inference_demo5.py  --use_sam_enhance 
+```
+<p align="center">
+  <img src="figures/demo5.png" alt="example" width="701" height="299"/>
+</p>
+
 
 ## 🖼️ End-to-End Layout-to-Image Generation
 
