@@ -6,6 +6,7 @@
 
 - 2025-03-17: Our paper [DreamRenderer](https://arxiv.org/abs/2503.12885) is now available on arXiv and [Supplementary Material](https://drive.google.com/file/d/1MNaKZmIyBXT7Ia_6DJ56vJ2TeB5o8m6c/view?usp=sharing) is released.
 - 2025-03-20: We release the code! 🎉
+- 2025-05-20: We have released the code for integrating DreamRenderer with SD3. 
 
 ![Multi-Instance Attribute Control](static/images/teaser.png)
 
